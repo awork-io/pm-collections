@@ -14,7 +14,7 @@ export class Response implements IResponse {
     timings?: any;
     header?: IKeyValue[] | Header[] | HeaderList[];
     cookie?: ICookie[] | Cookie[];
-    body?: IBody;
+    body?: IBody | Body;
     status?: string;
     code?: number;
 
