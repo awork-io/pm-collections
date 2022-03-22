@@ -1,13 +1,7 @@
-import { Auth } from "../classes/Auth";
-import { Event, EventList } from "../classes/Event";
-import { Folder, Item } from "../classes/Item";
-import { Variable, VariableList } from "../classes/Variable";
+import { IFolder } from "./folder-interface";
 import { IInformation } from "./information-interface";
 
-export interface ICollection {
+export interface ICollection extends IFolder {
     info: IInformation;
-    item: Item[] | Folder[];
-    event?: EventList | Event[];
-    variable?: VariableList | Variable[];
-    auth?: Auth;
+    protocolProfileBehavior?: any;
 }

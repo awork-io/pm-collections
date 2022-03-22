@@ -1,14 +1,10 @@
-import { IDescription } from "./description-interface";
+import { IProperty } from "./property-interface";
 
-export interface IVariable {
-    id?: string;
+export interface IVariable extends IProperty {
     key?: string;
     value?: string;
     type?: VariableType;
-    name?: string;
-    description?: IDescription;
     system?: boolean;
-    disabled?: boolean;
 }
 
 enum VariableType {

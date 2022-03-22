@@ -6,7 +6,7 @@ export interface IBody {
     formdata?: any;
     file?: any;
     options?: any;
-    disabled: boolean;
+    disabled?: boolean;
 }
 
 enum BodyMode {

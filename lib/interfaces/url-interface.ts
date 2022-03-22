@@ -1,5 +1,5 @@
 import { Variable } from "../classes/Variable";
-import { IDescription } from "./description-interface";
+import { IBaseProperty } from "./base-property-interface";
 
 export interface IUrl {
     raw?: string;
@@ -11,9 +11,8 @@ export interface IUrl {
     variable: Variable[];
 }
 
-interface IQueryParam {
+interface IQueryParam extends IBaseProperty {
     key?: string;
     value?: string;
     disabled?: boolean;
-    description?: IDescription;
 }

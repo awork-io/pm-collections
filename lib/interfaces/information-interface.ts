@@ -1,9 +1,12 @@
-import { IDescription } from "./description-interface";
+import { IProperty } from "./property-interface";
 
-export interface IInformation {
-    name: string;
-    _postman_id?: string;
-    description?: IDescription;
-    version?: any;
+export interface IInformation extends IProperty {
+    version?: string | {
+        major: number;
+        minor: number;
+        patch: number;
+        identifier?: string;
+        meta?: any;
+    };
     schema: string;
 }
