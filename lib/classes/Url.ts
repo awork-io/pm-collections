@@ -24,9 +24,10 @@ export class Url implements IUrl {
     }
 
     static resolve(obj: any) {
-        return this.isUrl(obj) ? new Url(obj) : obj;
+        if (obj instanceof Url || !this.isUrl(obj))
+            return obj;
+        return new Url(obj);
     }
-
     static isUrl(obj: any) {
         return obj.variable && (obj.raw || obj.protocol || obj.host || obj.port || obj.query || obj.hash);
     } 

@@ -16,7 +16,9 @@ export class QueryParam implements IKeyValue {
     }
 
     static resolve(obj: any) {
-        return this.isQueryParam(obj) ? new QueryParam(obj) : obj;
+        if (obj instanceof QueryParam || !this.isQueryParam(obj))
+            return obj;
+        return new QueryParam(obj);
     }
 
     static isQueryParam(obj: any) {

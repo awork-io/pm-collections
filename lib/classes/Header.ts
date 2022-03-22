@@ -17,9 +17,10 @@ export class Header implements IKeyValue {
     }
 
     static resolve(obj: any) {
-        return this.isHeader(obj) ? new Header(obj) : obj;
+        if (obj instanceof Header || !this.isHeader(obj))
+            return obj;
+        return new Header(obj);
     }
-
     static isHeader(obj: any) {
         return obj.key && obj.value;
     } 
