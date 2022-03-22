@@ -9,7 +9,7 @@ export interface IBody {
     disabled?: boolean;
 }
 
-enum BodyMode {
+export enum BodyMode {
     "raw",
     "urlencoded",
     "formdata",
