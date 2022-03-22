@@ -8,7 +8,7 @@ export class Information implements IInformation {
     id?: string | undefined;
     name?: string | undefined;
     disabled?: boolean | undefined;
-    description?: string | IDescription | undefined;
+    description?: string | IDescription | Description | undefined;
 
     constructor(options: IInformation) {
         this.version = options.version;
