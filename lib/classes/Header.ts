@@ -13,7 +13,7 @@ export class Header implements IKeyValue {
         this.key = options.key;
         this.value = options.value;
         this.disabled = options.disabled;
-        this.description = Description.resolveDescription(options.description);
+        this.description = Description.resolve(options.description);
     }
 
     static resolveHeader(obj: any) {

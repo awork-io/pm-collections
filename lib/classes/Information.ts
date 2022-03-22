@@ -16,7 +16,7 @@ export class Information implements IInformation {
         this.id = options.id;
         this.name = options.name;
         this.disabled = options.disabled;
-        this.description = Description.resolveDescription(options.description);
+        this.description = Description.resolve(options.description);
     }
 
 }

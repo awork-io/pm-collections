@@ -9,7 +9,7 @@ export class Description implements IDescription {
         this.type = options.type;
     }
 
-    static resolveDescription(obj: any) {
+    static resolve(obj: any) {
         if (this.isDescription(obj))
             return new Description(obj);
         return obj;
