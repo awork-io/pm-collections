@@ -1,6 +1,7 @@
 import { IDescription } from "../interfaces/description-interface";
 import { IKeyValue } from "../interfaces/key-value-interface";
 import { Description } from "./Description";
+import { PropertyList } from "./PropertyList";
 
 export class Header implements IKeyValue {
     key: string;
@@ -27,4 +28,8 @@ export class Header implements IKeyValue {
         return false;
     } 
 }
-export class HeaderList {}
+export class HeaderList extends PropertyList<Header> {
+    constructor(list: IKeyValue[] | Header[]) {
+        super(list.map(headerLike => Header.resolveHeader(headerLike)));
+    }
+}
