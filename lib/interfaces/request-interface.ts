@@ -8,6 +8,7 @@ import { IBody } from "./body-interface";
 import { ICertificate } from "./certificate-interface";
 import { IKeyValue } from "./key-value-interface";
 import { IProxyConfig } from "./proxy-config-interface";
+import { IResponse } from "./response-interface";
 import { IUrl } from "./url-interface";
 
 export interface IRequest extends IBaseProperty {
@@ -16,13 +17,13 @@ export interface IRequest extends IBaseProperty {
     proxy?: IProxyConfig;
     certificate?: ICertificate;
     method?: RequestMethod;
-    header?: string | IKeyValue[] | Header[] | HeaderList;
-    body?: IBody;
-    response?:  | Response;
+    header?: IKeyValue[] | Header[] | HeaderList;
+    body?: IBody | Body;
+    response?: IResponse | Response;
     protocolProfileBehavior?: any;
 }
 
-enum RequestMethod {
+export enum RequestMethod {
     "GET",
     "PUT",
     "POST",
