@@ -1,14 +1,14 @@
 import { IDescription } from "../interfaces/description-interface";
-import { IHeader } from "../interfaces/header-interface";
+import { IKeyValue } from "../interfaces/key-value-interface";
 import { Description } from "./Description";
 
-export class Header implements IHeader {
+export class Header implements IKeyValue {
     key: string;
     value: string;
     disabled?: boolean | undefined;
     description?: string | IDescription | Description | undefined;
 
-    constructor(options: IHeader) {
+    constructor(options: IKeyValue) {
         this.key = options.key;
         this.value = options.value;
         this.disabled = options.disabled;

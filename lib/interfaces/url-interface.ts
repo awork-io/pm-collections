@@ -1,18 +1,15 @@
-import { Variable } from "../classes/Variable";
+import { QueryParam } from "../classes/QueryParam";
+import { Variable, VariableList } from "../classes/Variable";
 import { IBaseProperty } from "./base-property-interface";
+import { IKeyValue } from "./key-value-interface";
+import { IVariable } from "./variable-interface";
 
 export interface IUrl {
     raw?: string;
     protocol?: string;
     host?: string | string[];
     port?: string;
-    query?: IQueryParam[];
+    query?: IKeyValue[] | QueryParam[];
     hash?: string;
-    variable: Variable[];
-}
-
-interface IQueryParam extends IBaseProperty {
-    key?: string;
-    value?: string;
-    disabled?: boolean;
+    variable: IVariable[] | Variable[] | VariableList;
 }

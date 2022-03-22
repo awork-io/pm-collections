@@ -1,6 +1,6 @@
 import { IBaseProperty } from "./base-property-interface";
 
-export interface IHeader extends IBaseProperty{
+export interface IKeyValue extends IBaseProperty {
     key: string;
     value: string;
     disabled?: boolean;
