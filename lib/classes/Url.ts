@@ -20,7 +20,7 @@ export class Url implements IUrl {
         this.port = options.port;
         this.query = options.query?.map((q) => QueryParam.resolve(q));
         this.hash = options.hash;
-        this.variable = options.variable;
+        this.variable = VariableList.resolve(options.variable);
     }
 
     static resolve(obj: any) {
