@@ -16,20 +16,16 @@ export class Header implements IKeyValue {
         this.description = Description.resolve(options.description);
     }
 
-    static resolveHeader(obj: any) {
-        if (this.isHeader(obj))
-            return new Header(obj);
-        return obj;
+    static resolve(obj: any) {
+        return this.isHeader(obj) ? new Header(obj) : obj;
     }
 
     static isHeader(obj: any) {
-        if (obj.key && obj.value)
-            return true;
-        return false;
+        return obj.key && obj.value;
     } 
 }
 export class HeaderList extends PropertyList<Header> {
     constructor(list: IKeyValue[] | Header[]) {
-        super(list.map(headerLike => Header.resolveHeader(headerLike)));
+        super(list.map(headerLike => Header.resolve(headerLike)));
     }
 }
