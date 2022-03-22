@@ -29,4 +29,13 @@ export class HeaderList extends PropertyList<Header> {
     constructor(list: IKeyValue[] | Header[]) {
         super(list.map(headerLike => Header.resolve(headerLike)));
     }
+
+    static resolve(arr: any) {
+        if (arr instanceof HeaderList || !this.validate(arr))
+            return arr;
+        return new HeaderList(arr);
+    }
+    static validate(arr: any) {
+        return arr.every((obj: any) => Header.validate(obj));
+    }
 }
