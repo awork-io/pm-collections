@@ -7,7 +7,7 @@ export interface IVariable extends IProperty {
     system?: boolean;
 }
 
-enum VariableType {
+export enum VariableType {
     "string",
     "boolean",
     "any",
