@@ -1,9 +1,8 @@
 import { Script } from "../classes/Script";
+import { IProperty } from "./property-interface";
 import { IScript } from "./script-interface";
 
-export interface IEvent {
-    id?: string;
+export interface IEvent extends IProperty {
     listen: string;
     script?: IScript | Script;
-    disabled?: boolean;
 }
