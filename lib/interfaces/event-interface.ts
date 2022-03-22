@@ -1,8 +1,9 @@
 import { Script } from "../classes/Script";
+import { IScript } from "./script-interface";
 
 export interface IEvent {
     id?: string;
     listen: string;
-    script?: Script;
+    script?: IScript | Script;
     disabled?: boolean;
 }
