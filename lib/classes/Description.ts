@@ -10,14 +10,11 @@ export class Description implements IDescription {
     }
 
     static resolve(obj: any) {
-        if (this.isDescription(obj))
-            return new Description(obj);
-        return obj;
+        if (obj instanceof Description || !this.validate(obj))
+            return obj;
+        return new Description(obj);
     }
-
-    static isDescription(obj: any) {
-        if(obj.content || obj.type)
-            return true;
-        return false;
+    static validate(obj: any) {
+        return obj.content || obj.type;
     }
 }

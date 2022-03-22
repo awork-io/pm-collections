@@ -24,11 +24,11 @@ export class Url implements IUrl {
     }
 
     static resolve(obj: any) {
-        if (obj instanceof Url || !this.isUrl(obj))
+        if (obj instanceof Url || !this.validate(obj))
             return obj;
         return new Url(obj);
     }
-    static isUrl(obj: any) {
+    static validate(obj: any) {
         return obj.variable && (obj.raw || obj.protocol || obj.host || obj.port || obj.query || obj.hash);
     } 
 }

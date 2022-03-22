@@ -16,12 +16,11 @@ export class QueryParam implements IKeyValue {
     }
 
     static resolve(obj: any) {
-        if (obj instanceof QueryParam || !this.isQueryParam(obj))
+        if (obj instanceof QueryParam || !this.validate(obj))
             return obj;
         return new QueryParam(obj);
     }
-
-    static isQueryParam(obj: any) {
+    static validate(obj: any) {
         return obj.key && obj.value;
     } 
 }
