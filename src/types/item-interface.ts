@@ -9,8 +9,8 @@ import { IResponse } from "./response-interface";
 import { IVariable } from "./variable-interface";
 
 export interface IItem extends IProperty {
-    variable?: IVariable[] | Variable[] | VariableList;
-    event?: IEvent[] | Event[] | EventList;
-    request: string | IRequest | Request;
-    response?: IResponse[] | Response[];
+  variable?: IVariable[] | Variable[] | VariableList;
+  event?: IEvent[] | Event[] | EventList;
+  request: string | IRequest | Request;
+  response?: IResponse[] | Response[];
 }

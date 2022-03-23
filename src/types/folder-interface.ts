@@ -6,8 +6,8 @@ import { IItem } from "./item-interface";
 import { IProperty } from "./property-interface";
 
 export interface IFolder extends IProperty {
-    variable?: VariableList | Variable[];
-    item: (IItem | Item | IFolder | Folder)[];
-    event?: EventList | Event[];
-    auth?: Auth;
+  variable?: VariableList | Variable[];
+  item: (IItem | Item | IFolder | Folder)[];
+  event?: EventList | Event[];
+  auth?: Auth;
 }

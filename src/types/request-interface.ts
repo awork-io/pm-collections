@@ -12,31 +12,31 @@ import { IResponse } from "./response-interface";
 import { IUrl } from "./url-interface";
 
 export interface IRequest extends IBaseProperty {
-    url?: string | IUrl | Url;
-    auth?: IAuth | Auth;
-    proxy?: IProxyConfig;
-    certificate?: ICertificate;
-    method?: RequestMethod;
-    header?: IKeyValue[] | Header[] | HeaderList;
-    body?: IBody | Body;
-    response?: IResponse | Response;
-    protocolProfileBehavior?: any;
+  url?: string | IUrl | Url;
+  auth?: IAuth | Auth;
+  proxy?: IProxyConfig;
+  certificate?: ICertificate;
+  method?: RequestMethod;
+  header?: IKeyValue[] | Header[] | HeaderList;
+  body?: IBody | Body;
+  response?: IResponse | Response;
+  protocolProfileBehavior?: any;
 }
 
 export enum RequestMethod {
-    "GET",
-    "PUT",
-    "POST",
-    "PATCH",
-    "DELETE",
-    "COPY",
-    "HEAD",
-    "OPTIONS",
-    "LINK",
-    "UNLINK",
-    "PURGE",
-    "LOCK",
-    "UNLOCK",
-    "PROPFIND",
-    "VIEW"
+  "GET",
+  "PUT",
+  "POST",
+  "PATCH",
+  "DELETE",
+  "COPY",
+  "HEAD",
+  "OPTIONS",
+  "LINK",
+  "UNLINK",
+  "PURGE",
+  "LOCK",
+  "UNLOCK",
+  "PROPFIND",
+  "VIEW",
 }

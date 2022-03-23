@@ -1,4 +1,4 @@
 export interface IDescription {
-    content?: string;
-    type?: string;
+  content?: string;
+  type?: string;
 }

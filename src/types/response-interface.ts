@@ -6,13 +6,13 @@ import { IKeyValue } from "./key-value-interface";
 import { IRequest } from "./request-interface";
 
 export interface IResponse {
-    id?: string;
-    originalRequest?: IRequest | Request;
-    responseTime?: string | number;
-    timings?: any;
-    header?: IKeyValue[] | Header[] | HeaderList[];
-    cookie?: ICookie[] | Cookie[];
-    body?: IBody;
-    status?: string;
-    code?: number;
+  id?: string;
+  originalRequest?: IRequest | Request;
+  responseTime?: string | number;
+  timings?: any;
+  header?: IKeyValue[] | Header[] | HeaderList[];
+  cookie?: ICookie[] | Cookie[];
+  body?: IBody;
+  status?: string;
+  code?: number;
 }

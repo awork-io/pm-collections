@@ -1,3 +1,3 @@
 export interface IPropertyList<T> {
-    items: T[];
+  items: T[];
 }
