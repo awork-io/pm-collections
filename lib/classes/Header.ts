@@ -26,7 +26,7 @@ export class Header implements IKeyValue {
     } 
 }
 export class HeaderList extends PropertyList<Header> {
-    constructor(list: IKeyValue[] | Header[]) {
+    constructor(list: (IKeyValue | Header)[]) {
         super(list.map(headerLike => Header.resolve(headerLike)));
     }
 

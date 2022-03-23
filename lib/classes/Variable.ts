@@ -24,7 +24,7 @@ export class Variable implements IVariable {
 }
 
 export class VariableList extends PropertyList<Variable> {
-    constructor(list: IVariable[] | Variable[]) {
+    constructor(list: (IVariable | Variable)[]) {
         super(list.map(variableLike => new Variable(variableLike)));
     }
 

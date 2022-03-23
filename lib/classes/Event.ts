@@ -37,7 +37,7 @@ export class Event implements IEvent {
     } 
 }
 export class EventList extends PropertyList<Event> {
-    constructor(list: IEvent[] | Event[]) {
+    constructor(list: (IEvent | Event)[]) {
         super(list.map(eventLike => Event.resolve(eventLike)));
     }
 
