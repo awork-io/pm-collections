@@ -1,5 +1,5 @@
 export interface IAuth {
-  type: AuthType;
+  type: string | AuthType;
 }
 
 export enum AuthType {

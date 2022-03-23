@@ -16,7 +16,7 @@ export interface IRequest extends IBaseProperty {
   auth?: IAuth | Auth;
   proxy?: IProxyConfig;
   certificate?: ICertificate;
-  method?: RequestMethod;
+  method?: string | RequestMethod;
   header?: IKeyValue[] | Header[] | HeaderList;
   body?: IBody | Body;
   response?: IResponse | Response;

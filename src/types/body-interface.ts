@@ -1,5 +1,5 @@
 export interface IBody {
-  mode?: BodyMode;
+  mode?: string | BodyMode;
   raw?: string;
   graphql?: any;
   urlencoded?: any;

@@ -1,7 +1,7 @@
 import { BodyMode, IBody } from "../types/body-interface";
 
 export class Body implements IBody {
-  mode?: BodyMode;
+  mode?: string | BodyMode;
   raw?: string;
   graphql?: any;
   urlencoded?: any;

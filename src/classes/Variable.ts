@@ -3,7 +3,7 @@ import { PropertyList } from "./PropertyList";
 export class Variable implements IVariable {
   key?: string;
   value?: string;
-  type?: VariableType;
+  type?: string | VariableType;
   system?: boolean;
 
   constructor(options: IVariable) {

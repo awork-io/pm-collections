@@ -1,7 +1,7 @@
 import { AuthType, IAuth } from "../types/auth-interface";
 
 export class Auth implements IAuth {
-  type: AuthType;
+  type: string | AuthType;
 
   constructor(options: IAuth) {
     this.type = options.type;
