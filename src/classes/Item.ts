@@ -33,6 +33,13 @@ export class Item implements IItem {
         this.description = Description.resolve(options.description);
     }
     
+    static resolveGroup(group: (IItem | Item | IFolder | Folder)[]) {
+        return group.map((i: any) =>
+            i.item ?
+            Folder.resolve(i) :
+            Item.resolve(i)
+        );
+    }
     static resolve(obj: any) {
         if (obj instanceof Item || !this.validate(obj))
             return obj;
@@ -49,7 +56,7 @@ export class Item implements IItem {
             obj.disabled ||
             obj.description
         ));
-    } 
+    }
 }
 
 export class Folder implements IFolder {
@@ -64,11 +71,7 @@ export class Folder implements IFolder {
 
     constructor(options: IFolder) {
         this.variable = VariableList.resolve(options.variable);
-        this.item = options.item.map((i: any) =>
-            i.item ?
-            Folder.resolve(i) :
-            Item.resolve(i)
-        );
+        this.item = Item.resolveGroup(options.item);
         this.event = EventList.resolve(options.event);
         this.auth = options.auth;
         this.id = options.id;

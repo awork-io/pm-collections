@@ -28,11 +28,7 @@ export class Collection implements ICollection {
         });
         this.protocolProfileBehavior = options.protocolProfileBehavior;
         this.variable = VariableList.resolve(options.variable);
-        this.item = options.item.map((i: any) =>
-            i.item ?
-            Folder.resolve(i) :
-            Item.resolve(i)
-        );
+        this.item = Item.resolveGroup(options.item);
         this.event = EventList.resolve(options.event);
         this.auth = options.auth;
         this.disabled = options.disabled;
