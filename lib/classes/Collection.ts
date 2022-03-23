@@ -10,7 +10,7 @@ import { Folder, Item } from "./Item";
 import { VariableList, Variable } from "./Variable";
 
 export class Collection implements ICollection {
-    info: IInformation;
+    info?: IInformation;
     protocolProfileBehavior?: any;
     variable?: VariableList | Variable[] | undefined;
     item: (IFolder | IItem | Item | Folder)[];
