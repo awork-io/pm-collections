@@ -2,7 +2,7 @@ export interface IAuth {
     type: AuthType,
 }
 
-enum AuthType {
+export enum AuthType {
     "apikey",
     "awsv4",
     "basic",
