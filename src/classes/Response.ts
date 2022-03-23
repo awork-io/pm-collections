@@ -1,8 +1,8 @@
-import { IBody } from "../interfaces/body-interface";
-import { ICookie } from "../interfaces/cookie-interface";
-import { IKeyValue } from "../interfaces/key-value-interface";
-import { IRequest } from "../interfaces/request-interface";
-import { IResponse } from "../interfaces/response-interface";
+import { IBody } from "../types/body-interface";
+import { ICookie } from "../types/cookie-interface";
+import { IKeyValue } from "../types/key-value-interface";
+import { IRequest } from "../types/request-interface";
+import { IResponse } from "../types/response-interface";
 import { Body } from "./Body";
 import { Cookie } from "./Cookie";
 import { Header, HeaderList } from "./Header";
@@ -36,7 +36,8 @@ export class Response implements IResponse {
         return new Response(obj);
     }
     static validate(obj: any) {
-        return obj.id ||
+        return !!(obj && (
+            obj.id ||
             obj.originalRequest ||
             obj.responseTime ||
             obj.timings ||
@@ -44,6 +45,8 @@ export class Response implements IResponse {
             obj.cookie ||
             obj.body ||
             obj.status ||
-            obj.code;
+            obj.code
+        ));
+            
     }
 }

@@ -1,4 +1,4 @@
-import { ICookie } from "../interfaces/cookie-interface";
+import { ICookie } from "../types/cookie-interface";
 
 export class Cookie implements ICookie {
     domain: string;
@@ -33,7 +33,8 @@ export class Cookie implements ICookie {
         return new Cookie(obj);
     }
     static validate(obj: any) {
-        return obj.domain ||
+        return !!(obj && (
+            obj.domain ||
             obj.expires ||
             obj.maxAge ||
             obj.hostOnly ||
@@ -43,6 +44,7 @@ export class Cookie implements ICookie {
             obj.secure ||
             obj.session ||
             obj.value ||
-            obj.extensions;
+            obj.extensions
+        ));
     } 
 }

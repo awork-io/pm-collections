@@ -1,10 +1,10 @@
-import { IDescription } from "../interfaces/description-interface";
-import { IEvent } from "../interfaces/event-interface";
-import { IFolder } from "../interfaces/folder-interface";
-import { IItem } from "../interfaces/item-interface";
-import { IRequest } from "../interfaces/request-interface";
-import { IResponse } from "../interfaces/response-interface";
-import { IVariable } from "../interfaces/variable-interface";
+import { IDescription } from "../types/description-interface";
+import { IEvent } from "../types/event-interface";
+import { IFolder } from "../types/folder-interface";
+import { IItem } from "../types/item-interface";
+import { IRequest } from "../types/request-interface";
+import { IResponse } from "../types/response-interface";
+import { IVariable } from "../types/variable-interface";
 import { Auth } from "./Auth";
 import { Description } from "./Description";
 import { Event, EventList } from "./Event";
@@ -39,14 +39,16 @@ export class Item implements IItem {
         return new Item(obj);
     }
     static validate(obj: any) {
-        return obj.variable ||
+        return !!(obj && (
+            obj.variable ||
             obj.event ||
             obj.request ||
             obj.response ||
             obj.id ||
             obj.name ||
             obj.disabled ||
-            obj.description;
+            obj.description
+        ));
     } 
 }
 
@@ -81,13 +83,15 @@ export class Folder implements IFolder {
         return new Folder(obj);
     }
     static validate(obj: any) {
-        return obj.variable ||
+        return !!(obj && (
+            obj.variable ||
             obj.item ||
             obj.event ||
             obj.auth ||
             obj.id ||
             obj.name ||
             obj.disabled ||
-            obj.description;
+            obj.description
+        ));
     }
 }

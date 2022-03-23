@@ -1,8 +1,8 @@
-import { ICollection } from "../interfaces/collection-interface";
-import { IDescription } from "../interfaces/description-interface";
-import { IFolder } from "../interfaces/folder-interface";
-import { IInformation } from "../interfaces/information-interface";
-import { IItem } from "../interfaces/item-interface";
+import { ICollection } from "../types/collection-interface";
+import { IDescription } from "../types/description-interface";
+import { IFolder } from "../types/folder-interface";
+import { IInformation } from "../types/information-interface";
+import { IItem } from "../types/item-interface";
 import { Auth } from "./Auth";
 import { Description } from "./Description";
 import { EventList, Event } from "./Event";
@@ -43,7 +43,8 @@ export class Collection implements ICollection {
         return new Collection(obj);
     }
     static validate(obj: any) {
-        return obj.info ||
+        return !!(obj && (
+            obj.info ||
             obj.protocolProfileBehavior ||
             obj.variable ||
             obj.item ||
@@ -52,6 +53,7 @@ export class Collection implements ICollection {
             obj.id ||
             obj.name ||
             obj.disabled ||
-            obj.description;
+            obj.description
+        ));
     } 
 }

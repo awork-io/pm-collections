@@ -1,5 +1,5 @@
-import { IDescription } from "../interfaces/description-interface";
-import { IKeyValue } from "../interfaces/key-value-interface";
+import { IDescription } from "../types/description-interface";
+import { IKeyValue } from "../types/key-value-interface";
 import { Description } from "./Description";
 import { PropertyList } from "./PropertyList";
 
@@ -22,7 +22,9 @@ export class Header implements IKeyValue {
         return new Header(obj);
     }
     static validate(obj: any) {
-        return obj.key && obj.value;
+        return !!(obj && (
+            obj.key && obj.value
+        ));
     } 
 }
 export class HeaderList extends PropertyList<Header> {
@@ -36,6 +38,7 @@ export class HeaderList extends PropertyList<Header> {
         return new HeaderList(arr);
     }
     static validate(arr: any) {
-        return arr.every((obj: any) => Header.validate(obj));
+        return !!(arr &&
+            arr.every((obj: any) => Header.validate(obj)));
     }
 }

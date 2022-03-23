@@ -1,5 +1,5 @@
-import { IDescription } from "../interfaces/description-interface";
-import { IInformation } from "../interfaces/information-interface";
+import { IDescription } from "../types/description-interface";
+import { IInformation } from "../types/information-interface";
 import { Description } from "./Description";
 
 const defSchema = "https://schema.getpostman.com/json/draft-07/collection/v2.1.0/";

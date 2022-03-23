@@ -1,4 +1,4 @@
-import { IVariable, VariableType } from "../interfaces/variable-interface";
+import { IVariable, VariableType } from "../types/variable-interface";
 import { PropertyList } from "./PropertyList";
 export class Variable implements IVariable {
     key?: string;
@@ -19,7 +19,12 @@ export class Variable implements IVariable {
         return new Variable(obj);
     }
     static validate(obj: any) {
-        return obj.key || obj.value || obj.type || obj.system;
+        return !!(obj && (
+            obj.key ||
+            obj.value ||
+            obj.type ||
+            obj.system
+        ));
     }
 }
 
@@ -34,6 +39,7 @@ export class VariableList extends PropertyList<Variable> {
         return new VariableList(arr);
     }
     static validate(arr: any) {
-        return arr.every((obj: any) => Variable.validate(obj));
+        return !!(arr &&
+            arr.every((obj: any) => Variable.validate(obj)));
     }
 }

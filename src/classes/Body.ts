@@ -1,4 +1,4 @@
-import { BodyMode, IBody } from "../interfaces/body-interface";
+import { BodyMode, IBody } from "../types/body-interface";
 
 export class Body implements IBody {
     mode?: BodyMode;
@@ -27,13 +27,15 @@ export class Body implements IBody {
         return new Body(obj);
     }
     static validate(obj: any) {
-        return obj.mode ||
+        return !!(obj && (
+            obj.mode ||
             obj.raw ||
             obj.graphql ||
             obj.urlencoded ||
             obj.formdata ||
             obj.file ||
             obj.options ||
-            obj.disabled;
+            obj.disabled
+        ));
     }
 }

@@ -1,4 +1,4 @@
-import { AuthType, IAuth } from "../interfaces/auth-interface";
+import { AuthType, IAuth } from "../types/auth-interface";
 
 export class Auth implements IAuth {
     type: AuthType;
@@ -13,6 +13,6 @@ export class Auth implements IAuth {
         return new Auth(obj);
     }
     static validate(obj: any) {
-        return obj.type;
+        return !!(obj && obj.type);
     } 
 }

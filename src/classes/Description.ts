@@ -1,4 +1,4 @@
-import { IDescription } from "../interfaces/description-interface";
+import { IDescription } from "../types/description-interface";
 
 export class Description implements IDescription {
     content?: string;
@@ -15,6 +15,8 @@ export class Description implements IDescription {
         return new Description(obj);
     }
     static validate(obj: any) {
-        return obj.content || obj.type;
+        return !!(obj && (
+            obj.content || obj.type
+        ));
     }
 }

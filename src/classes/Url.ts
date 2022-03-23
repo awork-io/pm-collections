@@ -1,6 +1,6 @@
-import { IKeyValue } from "../interfaces/key-value-interface";
-import { IUrl } from "../interfaces/url-interface";
-import { IVariable } from "../interfaces/variable-interface";
+import { IKeyValue } from "../types/key-value-interface";
+import { IUrl } from "../types/url-interface";
+import { IVariable } from "../types/variable-interface";
 import { QueryParam } from "./QueryParam";
 import { Variable, VariableList } from "./Variable";
 
@@ -29,6 +29,14 @@ export class Url implements IUrl {
         return new Url(obj);
     }
     static validate(obj: any) {
-        return obj.variable && (obj.raw || obj.protocol || obj.host || obj.port || obj.query || obj.hash);
+        return !!(obj && (
+            obj.variable ||
+            obj.raw ||
+            obj.protocol ||
+            obj.host ||
+            obj.port ||
+            obj.query ||
+            obj.hash
+        ));
     } 
 }

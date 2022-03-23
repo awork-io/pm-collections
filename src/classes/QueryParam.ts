@@ -1,5 +1,5 @@
-import { IDescription } from "../interfaces/description-interface";
-import { IKeyValue } from "../interfaces/key-value-interface";
+import { IDescription } from "../types/description-interface";
+import { IKeyValue } from "../types/key-value-interface";
 import { Description } from "./Description";
 
 export class QueryParam implements IKeyValue {
@@ -21,6 +21,8 @@ export class QueryParam implements IKeyValue {
         return new QueryParam(obj);
     }
     static validate(obj: any) {
-        return obj.key && obj.value;
+        return !!(obj && (
+            obj.key && obj.value
+        ));
     } 
 }

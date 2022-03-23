@@ -1,6 +1,6 @@
-import { IDescription } from "../interfaces/description-interface";
-import { IEvent } from "../interfaces/event-interface";
-import { IScript } from "../interfaces/script-interface";
+import { IDescription } from "../types/description-interface";
+import { IEvent } from "../types/event-interface";
+import { IScript } from "../types/script-interface";
 import { Description } from "./Description";
 import { PropertyList } from "./PropertyList";
 import { Script } from "./Script";
@@ -28,12 +28,14 @@ export class Event implements IEvent {
         return new Event(obj);
     }
     static validate(obj: any) {
-        return obj.listen ||
+        return !!(obj && (
+            obj.listen ||
             obj.script ||
             obj.id ||
             obj.name ||
             obj.disabled ||
-            obj.description;
+            obj.description
+        ));
     } 
 }
 export class EventList extends PropertyList<Event> {
@@ -47,6 +49,7 @@ export class EventList extends PropertyList<Event> {
         return new EventList(arr);
     }
     static validate(arr: any) {
-        return arr.every((obj: any) => Event.validate(obj));
+        return !!(arr &&
+            arr.every((obj: any) => Event.validate(obj)));
     }
 }
