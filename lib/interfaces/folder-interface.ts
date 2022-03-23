@@ -7,7 +7,7 @@ import { IProperty } from "./property-interface";
 
 export interface IFolder extends IProperty {
     variable?: VariableList | Variable[];
-    item: IItem[] | Item[] | IFolder[] | Folder[];
+    item: (IItem | Item | IFolder | Folder)[];
     event?: EventList | Event[];
     auth?: Auth;
 }
