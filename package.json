@@ -30,7 +30,7 @@
     "singleQuote": false,
     "trailingComma": "es5"
   },
-  "name": "pm-collections",
+  "name": "@atedesch1/pm-collections",
   "author": "atedesch1",
   "module": "dist/pm-collections.esm.js",
   "size-limit": [
