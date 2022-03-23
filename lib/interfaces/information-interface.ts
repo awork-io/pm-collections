@@ -8,5 +8,5 @@ export interface IInformation extends IProperty {
         identifier?: string;
         meta?: any;
     };
-    schema: string;
+    schema?: string;
 }
