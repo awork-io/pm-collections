@@ -1,6 +1,5 @@
 import { QueryParam } from "../classes/QueryParam";
 import { Variable, VariableList } from "../classes/Variable";
-import { IBaseProperty } from "./base-property-interface";
 import { IKeyValue } from "./key-value-interface";
 import { IVariable } from "./variable-interface";
 
