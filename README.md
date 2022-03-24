@@ -44,3 +44,10 @@ To visualize bundle, use
 ```bash
 npm run analyze # or yarn analyze
 ```
+
+## Developers:
+It is recommended to run
+```bash
+npm run lint --fix # or yarn lint --fix
+```
+before merging to **master** branch.
