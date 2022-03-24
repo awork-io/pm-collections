@@ -1,6 +1,7 @@
 import { IAuth } from "../types/auth-interface";
 import { IBody } from "../types/body-interface";
 import { ICertificate } from "../types/certificate-interface";
+import { IDescription } from "../types/description-interface";
 import { IKeyValue } from "../types/key-value-interface";
 import { IProxyConfig } from "../types/proxy-config-interface";
 import { IRequest, RequestMethod } from "../types/request-interface";
@@ -8,6 +9,7 @@ import { IResponse } from "../types/response-interface";
 import { IUrl } from "../types/url-interface";
 import { Auth } from "./Auth";
 import { Body } from "./Body";
+import { Description } from "./Description";
 import { Header, HeaderList } from "./Header";
 import { Response } from "./Response";
 import { Url } from "./Url";
@@ -22,6 +24,7 @@ export class Request implements IRequest {
   body?: IBody | Body;
   response?: IResponse | Response;
   protocolProfileBehavior?: any;
+  description: string | IDescription | Description;
 
   constructor(options: IRequest) {
     this.url = Url.resolve(options.url);
@@ -33,6 +36,7 @@ export class Request implements IRequest {
     this.body = Body.resolve(options.body);
     this.response = Response.resolve(options.response);
     this.protocolProfileBehavior = options.protocolProfileBehavior;
+    this.description = Description.resolve(options.description);
   }
 
   static resolve(obj: any) {

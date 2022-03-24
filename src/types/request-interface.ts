@@ -1,4 +1,5 @@
 import { Auth } from "../classes/Auth";
+import { Description } from "../classes/Description";
 import { Header, HeaderList } from "../classes/Header";
 import { Response } from "../classes/Response";
 import { Url } from "../classes/Url";
@@ -6,6 +7,7 @@ import { IAuth } from "./auth-interface";
 import { IBaseProperty } from "./base-property-interface";
 import { IBody } from "./body-interface";
 import { ICertificate } from "./certificate-interface";
+import { IDescription } from "./description-interface";
 import { IKeyValue } from "./key-value-interface";
 import { IProxyConfig } from "./proxy-config-interface";
 import { IResponse } from "./response-interface";
@@ -21,6 +23,7 @@ export interface IRequest extends IBaseProperty {
   body?: IBody | Body;
   response?: IResponse | Response;
   protocolProfileBehavior?: any;
+  description: string | IDescription | Description;
 }
 
 export enum RequestMethod {
