@@ -1,5 +1,5 @@
 {
-  "version": "0.1.3",
+  "version": "0.1.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -29,8 +29,7 @@
     "singleQuote": false,
     "trailingComma": "es5"
   },
-  "name": "@atedesch1/pm-collections",
-  "author": "atedesch1",
+  "name": "@meetq/pm-collections",
   "module": "dist/pm-collections.esm.js",
   "size-limit": [
     {
