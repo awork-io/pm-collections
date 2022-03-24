@@ -1,6 +1,9 @@
 # PM-COLLECTIONS
 
 This package is based on **Postman's** postman-collection (https://github.com/postmanlabs/postman-collection). It is intended to be simplistic and to provide intellisense on the collection schema defined by **Postman** (https://schema.getpostman.com/json/draft-07/collection/v2.1.0/).
+<br>
+<br>
+Created using **TSDX**.
 ## Commands
 
 ### Watch mode
@@ -33,7 +36,7 @@ To lint code, use
 ```bash
 npm run lint # or yarn lint
 ```
-## Bundle Analysis
+### Bundle Analysis
 
 To calculate library size, use
 ```bash
