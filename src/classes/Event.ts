@@ -7,7 +7,7 @@ import { Script } from "./Script";
 
 export class Event implements IEvent {
   listen: string;
-  script?: IScript | Script | undefined;
+  script?: string | IScript | Script | undefined;
   id?: string | undefined;
   name?: string | undefined;
   disabled?: boolean | undefined;

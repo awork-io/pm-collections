@@ -4,5 +4,5 @@ import { IScript } from "./script-interface";
 
 export interface IEvent extends IProperty {
   listen: string;
-  script?: IScript | Script;
+  script?: string | IScript | Script;
 }
