@@ -52,8 +52,4 @@ export class Collection implements ICollection {
         obj.description)
     );
   }
-
-  toJSON() {
-    return JSON.stringify(this);
-  }
 }
