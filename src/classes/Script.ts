@@ -16,8 +16,9 @@ export class Script implements IScript {
     this.src = Url.resolve(options.src);
     this.name = options.name;
   }
-
+  
   static resolve(obj: any) {
+    // @TODO If string return script
     if (obj instanceof Script || !this.validate(obj)) return obj;
     return new Script(obj);
   }

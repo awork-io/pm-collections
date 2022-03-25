@@ -24,6 +24,7 @@ export class Url implements IUrl {
   }
 
   static resolve(obj: any) {
+    // @TODO If string return Url
     if (obj instanceof Url || !this.validate(obj)) return obj;
     return new Url(obj);
   }
