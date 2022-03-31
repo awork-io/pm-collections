@@ -52,4 +52,10 @@ export class Collection implements ICollection {
         obj.description)
     );
   }
+
+  toJSON() {}
+}
+
+Collection.prototype.toJSON = function() {
+  return { collection: { ...this } };
 }
