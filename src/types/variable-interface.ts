@@ -8,8 +8,8 @@ export interface IVariable extends IProperty {
 }
 
 export enum VariableType {
-  "string",
-  "boolean",
-  "any",
-  "number",
+  string = "string",
+  boolean = "boolean",
+  any = "any",
+  number = "number",
 }

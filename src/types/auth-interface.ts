@@ -3,15 +3,15 @@ export interface IAuth {
 }
 
 export enum AuthType {
-  "apikey",
-  "awsv4",
-  "basic",
-  "bearer",
-  "digest",
-  "edgegrid",
-  "hawk",
-  "noauth",
-  "oauth1",
-  "oauth2",
-  "ntlm",
+  apikey = "apikey",
+  awsv4 = "awsv4",
+  basic = "basic",
+  bearer = "bearer",
+  digest = "digest",
+  edgegrid = "edgegrid",
+  hawk = "hawk",
+  noauth = "noauth",
+  oauth1 = "oauth1",
+  oauth2 = "oauth2",
+  ntlm = "ntlm",
 }

@@ -10,9 +10,9 @@ export interface IBody {
 }
 
 export enum BodyMode {
-  "raw",
-  "urlencoded",
-  "formdata",
-  "file",
-  "graphql",
+  raw = "raw",
+  urlencoded ="urlencoded",
+  formdata = "formdata",
+  file = "file",
+  graphql = "graphql",
 }
