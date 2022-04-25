@@ -3,7 +3,7 @@ import { IInformation } from "../types/information-interface";
 import { Description } from "./Description";
 
 const defSchema =
-  "https://schema.getpostman.com/json/draft-07/collection/v2.1.0/";
+  "https://schema.postman.com/json/collection/v2.1.0/collection.json";
 
 export class Information implements IInformation {
   version?:

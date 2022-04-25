@@ -10,7 +10,7 @@ test("Collection toJSON method", () => {
   expect(JSON.stringify(collection.toJSON())).toStrictEqual(JSON.stringify({
     collection: {
       info: {
-        schema: "https://schema.getpostman.com/json/draft-07/collection/v2.1.0/",
+        schema: "https://schema.postman.com/json/collection/v2.1.0/collection.json",
         name: "New",
         description: "any",
       },

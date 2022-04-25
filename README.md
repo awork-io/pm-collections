@@ -1,6 +1,6 @@
 # PM-COLLECTIONS
 
-This package is based on **Postman's** postman-collection (https://github.com/postmanlabs/postman-collection). It is intended to be simplistic and to provide intellisense on the collection schema defined by **Postman** (https://schema.getpostman.com/json/draft-07/collection/v2.1.0/).
+This package is based on **Postman's** postman-collection (https://github.com/postmanlabs/postman-collection). It is intended to be simplistic and to provide intellisense on the collection schema defined by **Postman** (https://schema.postman.com/json/collection/v2.1.0/collection.json).
 <br>
 <br>
 Created using **TSDX**.
