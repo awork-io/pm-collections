@@ -18,7 +18,7 @@ export class Script implements IScript {
   }
   
   static resolve(obj: any) {
-    // @TODO If string return script
+    if (typeof obj === "string") return new Script({ exec: obj });
     if (obj instanceof Script || !this.validate(obj)) return obj;
     return new Script(obj);
   }
