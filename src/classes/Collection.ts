@@ -22,8 +22,8 @@ export class Collection implements ICollection {
   constructor(options: ICollection) {
     this.info = new Information({
       ...options.info,
-      id: options.id,
-      name: options.name,
+      id: options.info?.id ?? options.id,
+      name: options.info?.name ??options.name,
       description: Description.resolve(options.description),
     });
     this.protocolProfileBehavior = options.protocolProfileBehavior;
